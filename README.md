@@ -2,6 +2,8 @@
 
 Contribution to the European Health Hackathon 2022 Challenge 6 https://hackhealth.eu/
 
+Progress Doc https://docs.google.com/document/d/1tdbptVnlwAC6p1nt4oPbzKTXhUuPqZB65h2o9GeFpvU/edit
+
 ### Resources
 
 |URL|Description|
