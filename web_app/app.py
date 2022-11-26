@@ -51,7 +51,7 @@ def main():
         # create shapley explanation
 
     with tab2:
-        st.header("Fill in form below ass input:")
+        st.header("Fill in form below as input:")
 
         #inputs = preprocess_inputs
 
