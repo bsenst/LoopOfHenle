@@ -6,7 +6,7 @@ import xgboost as xgb
 from utils import preprocess_df, analytes_nclp_mapping
 from constants import MODEL, FEATURE_COLUMNS, USED_COLUMNS, USES_DIFF_FROM_LAST
 
-with open(MODEL,"rb") as f:
+with open("/app/loopofhenle/web_app/" + MODEL,"rb") as f:
     model=pickle.load(f)
 
 def main():
