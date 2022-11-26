@@ -29,7 +29,7 @@ def main():
         inputs = np.random.random(size=(1,34))
         data = pd.DataFrame(inputs, columns=FEATURE_COLUMNS)
 
-        if st.button('Predict'):
+        if st.button('Predict', key="predict_excel"):
             prediction = model.predict(data)
             proba = model.predict_proba(data)
             if prediction[0]:
@@ -43,7 +43,35 @@ def main():
 
     with tab1:
         st.header("Add excel file with lab test of patients:")
-        # data = preprocess_file
+
+        uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
+
+        # TODO: remove this debug data
+        with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as uploaded_file:
+
+            if uploaded_file:
+                df = pd.read_excel(uploaded_file)
+
+                st.header("Your file:")
+                st.dataframe(df)
+
+                data = preprocess_df(df)
+
+                st.header("Prepared data for model:")
+                st.dataframe(data)
+
+            if st.button('Predict'):
+                prediction = model.predict(data)
+                proba = model.predict_proba(data)
+                if prediction[0]:
+                    proba = np.round(proba[0][1],decimals=2)
+                    st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
+                else:
+                    proba = np.round(proba[0][0],decimals=2)
+                    st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
+
+                # create shapley explanation
+
 
         # skips p_id, entry_data
         # model.predict(data)

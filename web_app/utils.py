@@ -66,4 +66,6 @@ def preprocess_df(labs_df):
         if not col in model_data_grouped.columns:
             model_data_grouped[col] = -999
 
+    # TODO: warn about missing values
+
     return model_data_grouped
