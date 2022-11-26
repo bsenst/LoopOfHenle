@@ -5,7 +5,7 @@ import pandas as pd
 import xgboost as xgb
 #from utils import preprocess_file, preprocess_inputs
 
-with open("model_weighted.pkl","rb") as f:
+with open("/app/loopofhenle/web_app/model_weighted.pkl","rb") as f:
     model=pickle.load(f)
 
 with open("analytes_nclp_mapping.pkl","rb") as f:
