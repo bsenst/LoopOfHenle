@@ -1,4 +1,4 @@
-MODEL = "model_weighted.pkl"
+MODEL = "/app/loopofhenle/web_app/model_weighted.pkl"
 
 
 USED_COLUMNS = ['Patient', 'Report','EntryDate', 'NCLP',

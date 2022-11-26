@@ -2,7 +2,7 @@ import pandas as pd
 import pickle
 from constants import FEATURE_COLUMNS, USES_DIFF_FROM_LAST, USED_COLUMNS
 
-with open("analytes_nclp_mapping.pkl","rb") as f:
+with open("/app/loopofhenle/web_app/analytes_nclp_mapping.pkl","rb") as f:
     analytes_nclp_mapping=pickle.load(f)
 
 def ffill_na(df):
