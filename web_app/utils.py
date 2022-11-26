@@ -8,13 +8,9 @@ with open("/app/loopofhenle/web_app/analytes_nclp_mapping.pkl","rb") as f:
 def ffill_na(df):
     return df.fillna(method="ffill")
 
-def format_date(row):
-    day, month, year = row.split(".")
-    return f"{year}-{month}-{day}"
-
 def prepare_labs_df(df):
     # prepare 
-    df.EntryDate = pd.to_datetime(df.EntryDate.apply(format_date))
+    df.EntryDate = pd.to_datetime(df.EntryDate)
     df["pr_id"]= df.Patient.astype(str) + "_" +df.Report.astype(str)
     df = df[~df.ValueNumber.isna()]
 
@@ -39,12 +35,23 @@ def preprocess_df(labs_df):
 
     model_data["p_id"] = model_data.pr_id.apply(lambda x: int(x.split("_")[0]))
 
-    for col in model_data.columns[1:-1]:
+    for col in model_data.columns[1:-2]:  # skip pr_id, entry_data and p_id
         model_data[col] = model_data[col].apply(lambda x: pd.to_numeric(x, errors='coerce'))
 
     model_data_grouped = model_data.groupby(["p_id", pd.Grouper(key="EntryDate",freq="1M")]).mean()
 
-    model_data_grouped = model_data_grouped[FEATURE_COLUMNS]
+    model_data_grouped.columns = [str(col) for col in model_data_grouped.columns]
+
+    present_columns = []
+    for col in FEATURE_COLUMNS:
+        if col in model_data_grouped.columns:
+            present_columns.append(col)
+
+    model_data_grouped = model_data_grouped[present_columns]
+
+    # TODO: make warning for multiple pations
+    if model_data_grouped.shape[1] <= 5:
+        print("Data contain too few lab tests")
 
     model_data_grouped = model_data_grouped.groupby("p_id").apply(ffill_na)
 
@@ -55,6 +62,8 @@ def preprocess_df(labs_df):
 
     model_data_grouped = model_data_grouped.fillna(-999)
 
-    return model_data_grouped
+    for col in FEATURE_COLUMNS:
+        if not col in model_data_grouped.columns:
+            model_data_grouped[col] = -999
 
-    
+    return model_data_grouped
