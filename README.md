@@ -32,3 +32,4 @@ Time series
 * https://machinelearningmastery.com/a-guide-to-obtaining-time-series-datasets-in-python/
 * https://neptune.ai/blog/time-series-prediction-vs-machine-learning
 * https://www.tensorflow.org/tutorials/structured_data/time_series
+* https://github.com/yzhao062/Pyod Python Outlier Detection (PyOD)
