@@ -3,15 +3,11 @@ import pickle
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-#from utils import preprocess_file, preprocess_inputs
+from utils import preprocess_df, analytes_nclp_mapping
+from constants import MODEL, FEATURE_COLUMNS, USED_COLUMNS, USES_DIFF_FROM_LAST
 
-with open("/app/loopofhenle/web_app/model_weighted.pkl","rb") as f:
+with open(MODEL,"rb") as f:
     model=pickle.load(f)
-
-with open("analytes_nclp_mapping.pkl","rb") as f:
-    analytes_nclp_mapping=pickle.load(f)
-
-FEATURE_COLUMNS = ['8574.0', '3086.0', '5254.0', '2688.0', '4769.0', '13808.0', '1675.0', '2419.0', '2099.0', '1991.0', '4726.0', '16263.0', '18895.0', '5272.0', '3078.0', '582.0', '17339.0', '921.0', '1961.0', '3410.0', '5143.0', '12367.0', '12348.0', '12347.0', '12369.0', '12365.0', '18029.0', '18027.0', '12449.0', '12460.0', '12483.0', '12478.0', '12471.0', '543.0']
 
 def main():
     st.markdown("<h1 style='text-align: center; color: White;background-color:#e84343'>Kidney in Check</h1>", unsafe_allow_html=True)
@@ -47,13 +43,16 @@ def main():
 
     with tab1:
         st.header("Add excel file with lab test of patients:")
-        #inputs = preprocess_file
+        # data = preprocess_file
+
+        # skips p_id, entry_data
+        # model.predict(data)
 
         # create shapley explanation
 
     with tab2:
         st.header("Fill in form below ass input:")
-        
+
         #inputs = preprocess_inputs
 
         # create shapley explanation
