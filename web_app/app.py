@@ -72,12 +72,12 @@ def main():
                 proba = np.round(proba,decimals=2)
                 st.success(f"NEGATIVE: This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
-            # create shapley explanation
-            explainer = shap.TreeExplainer(model)
-
-            shap_values = explainer.shap_values(data[FEATURE_COLUMNS])
-
             # TODO: add shap dependency
+            # create shapley explanation
+            # explainer = shap.TreeExplainer(model)
+
+            # shap_values = explainer.shap_values(data[FEATURE_COLUMNS])
+
             # # visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
             # st.write(shap.force_plot(explainer.expected_value, shap_values[-1,:], data[FEATURE_COLUMNS].iloc[-1,:], matplotlib=True), unsafe_allow_html=True)
             # st.pyplot(bbox_inches='tight')
