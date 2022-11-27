@@ -117,7 +117,11 @@ s_testosteron                  s_total_IgE_s_Total_IgE        s_total_IgE_s_Tota
 s_urea_Urea_urea_S_Urea_S-urea v_3-OH-butyrát                 x_Frakční_exkrece_vody_Fr[...]
 ```
 
-## Try the key features with the live app
+## Try the key features with one of the live apps
+
+https://bsenst-loopofhenle-web-appapp-yk9aez.streamlit.app/
+
+![image](https://user-images.githubusercontent.com/8211411/204124133-48d2426b-3f1a-4c50-8ac6-7207b4c9f585.png)
 
 https://huggingface.co/spaces/bsenst/CKD-Predictor
 
