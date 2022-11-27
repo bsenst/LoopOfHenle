@@ -33,10 +33,10 @@ def main():
         if option =="Excel":
             df = st.file_uploader("Choose a XLSX file", type="xlsx")
         elif option == 'Examplary CKD patient':
-            with open("test_ckd_patient.xlsx","rb") as f:
+            with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as f:
                 df = pd.read_excel(f)
         elif option == 'Examplary non-CKD patient':
-            with open("test_ckd_patient.xlsx","rb") as f:
+            with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as f:
                 df = pd.read_excel(f)
 
 
