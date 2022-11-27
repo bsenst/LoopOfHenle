@@ -59,11 +59,12 @@ def main():
             proba = model.predict_proba(data[FEATURE_COLUMNS])
             prediction = np.mean(prediction)
             st.dataframe(proba)
-            proba = np.mean(proba)
             if prediction > 0.5:
+                proba = np.mean(proba[:,1])
                 proba = np.round(proba,decimals=2)
                 st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
             else:
+                proba = np.mean(proba[:,0])
                 proba = np.round(proba,decimals=2)
                 st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
