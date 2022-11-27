@@ -123,7 +123,7 @@ https://huggingface.co/spaces/bsenst/CKD-Predictor
 
 ![image](https://user-images.githubusercontent.com/8211411/204114798-dfef4648-2d3a-416a-885c-d2091b800c6a.png)
 
-## Further Resources as a result of the Friday Warm-up
+## Further Resources as a result of the Friday Contest Warm-up
 
 |URL|Description|
 |---|---|
