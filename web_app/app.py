@@ -57,6 +57,7 @@ def main():
         if st.button('Predict', key="tab1"):
             prediction = model.predict(data[FEATURE_COLUMNS])
             proba = model.predict_proba(data[FEATURE_COLUMNS])
+            st.dataframe(prediction)
             prediction = prediction.mean()
             if prediction > 0.5:
                 proba = np.round(proba.mean(),decimals=2)
