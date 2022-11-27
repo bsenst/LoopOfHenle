@@ -41,7 +41,7 @@ def main():
 
 
 
-        if len(df)>0:
+        if df:
             st.header("Your file:")
             st.dataframe(df)
 
