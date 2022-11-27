@@ -1,3 +1,4 @@
+from types import NoneType
 import streamlit as st
 import pickle
 import numpy as np
@@ -6,7 +7,7 @@ import xgboost as xgb
 from utils import preprocess_df, analytes_nclp_mapping, values_dict, column_means
 from constants import MODEL, FEATURE_COLUMNS, USED_COLUMNS, USES_DIFF_FROM_LAST
 
-with open("/app/loopofhenle/web_app/" +MODEL,"rb") as f:
+with open("/app/loopofhenle/web_app/"+MODEL,"rb") as f:
     model=pickle.load(f)
 
 def main():
@@ -18,17 +19,39 @@ def main():
         Combining expert knowledge of doctors and improvement in machine learning we are know able to predict kidney diasease years earlier then it reaaches first stage.
         """)
 
-    tab1, tab2, tab3 = st.tabs(
+    tab1, tab2= st.tabs(
         ["Predict CDK for patients from excel file",
-        "Predict manually adding values",
-        "Test application on exemplary patients"]
+        "Predict manually adding values"]
         )
 
-    with tab0:
-        inputs = np.random.random(size=(1,34))
-        data = pd.DataFrame(inputs, columns=FEATURE_COLUMNS)
+    with tab1:
+        st.header("Add excel file with lab test of patients:")
 
-        if st.button('Predict', key="predict_excel"):
+        option = st.selectbox(
+            'What is your input?',
+            ('Excel', 'Examplary CKD patient',"Examplary non-CKD patient"))
+
+        if option =="Excel":
+            df = st.file_uploader("Choose a XLSX file", type="xlsx")
+        elif option == 'Examplary CKD patient':
+            with open("test_ckd_patient.xlsx","rb") as f:
+                df = pd.read_excel(f)
+        elif option == 'Examplary non-CKD patient':
+            with open("test_ckd_patient.xlsx","rb") as f:
+                df = pd.read_excel(f)
+
+
+
+        if type(df)!=NoneType:
+            st.header("Your file:")
+            st.dataframe(df)
+
+            data = preprocess_df(df)
+
+            st.header("Prepared data for model:")
+            st.dataframe(data)
+
+        if st.button('Predict', key="tab1"):
             prediction = model.predict(data)
             proba = model.predict_proba(data)
             if prediction[0]:
@@ -39,37 +62,6 @@ def main():
                 st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
             # create shapley explanation
-
-    with tab1:
-        st.header("Add excel file with lab test of patients:")
-
-        uploaded_file = st.file_uploader("Choose a XLSX file", type="xlsx")
-
-        # TODO: remove this debug data
-        with open("test_ckd_patient.xlsx","rb") as uploaded_file:
-
-            if uploaded_file:
-                df = pd.read_excel(uploaded_file)
-
-                st.header("Your file:")
-                st.dataframe(df)
-
-                data = preprocess_df(df)
-
-                st.header("Prepared data for model:")
-                st.dataframe(data)
-
-            if st.button('Predict', key="tab1"):
-                prediction = model.predict(data)
-                proba = model.predict_proba(data)
-                if prediction[0]:
-                    proba = np.round(proba[0][1],decimals=2)
-                    st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
-                else:
-                    proba = np.round(proba[0][0],decimals=2)
-                    st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
-
-                # create shapley explanation
 
 
         # skips p_id, entry_data
@@ -104,13 +96,10 @@ def main():
             new_columns.append(str(col))
 
         data.columns = new_columns
-        st.dataframe(data)
 
         for col in FEATURE_COLUMNS:
             if not col in data.columns:
                 data[col] = column_means[col]
-
-        st.dataframe(data)
 
         if st.button('Predict', key="tab2"):
                 prediction = model.predict(data[FEATURE_COLUMNS])

@@ -5,7 +5,6 @@ from constants import FEATURE_COLUMNS, USES_DIFF_FROM_LAST, USED_COLUMNS
 with open("/app/loopofhenle/web_app/analytes_nclp_mapping.pkl","rb") as f:
     analytes_nclp_mapping=pickle.load(f)
 
-
 with open("/app/loopofhenle/web_app/values_dict.pkl","rb") as f:
     values_dict=pickle.load(f)
 
