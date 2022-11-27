@@ -10,7 +10,7 @@ with open("/app/loopofhenle/web_app/"+MODEL,"rb") as f:
     model=pickle.load(f)
 
 def main():
-    st.markdown("<h1 style='text-align: center; color: White;background-color:#e84343'>Kidney in Check</h1>", unsafe_allow_html=True)
+    #st.markdown("<h1 style='text-align: center; color: White;background-color:#e84343'>Kidney in Check</h1>", unsafe_allow_html=True)
     st.sidebar.header("What does this app do?")
     st.sidebar.text(
         """This app is has been create based on collaboration with doctors.
