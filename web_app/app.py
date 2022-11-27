@@ -16,7 +16,7 @@ def main():
         """
         This app is has been create based on collaboration
         with doctors. We have used historical diagnoses
-        written by doctors based to improve early warning
+        written by doctors to create early warning
         for possible kidney diasease. Combining expert
         knowledge of doctors and improvement in machine
         learning we are know able to predict kidney diasease
@@ -35,16 +35,15 @@ def main():
             'What is your input?',
             ('Excel', 'Examplary CKD patient',"Examplary non-CKD patient"))
 
-        if option =="Excel":
-            df = st.file_uploader("Choose a XLSX file", type="xlsx")
-        elif option == 'Examplary CKD patient':
+        # TODO: make it work with excel
+        # if option =="Excel":
+        #     df = st.file_uploader("Choose a XLSX file", type="xlsx")
+        if option == 'Examplary CKD patient':
             with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as f:
                 df = pd.read_excel(f)
         elif option == 'Examplary non-CKD patient':
             with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as f:
                 df = pd.read_excel(f)
-
-
 
         if df:
             st.header("Your file:")
