@@ -39,11 +39,11 @@ def main():
         # if option =="Excel":
         #     df = st.file_uploader("Choose a XLSX file", type="xlsx")
         if option == 'Examplary CKD patient':
-            with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as f:
-                df = pd.read_excel(f)
+            with open("/app/loopofhenle/web_app/test_ckd_patient.csv","rb") as f:
+                df = pd.read_csv(f)
         elif option == 'Examplary non-CKD patient':
-            with open("/app/loopofhenle/web_app/test_ckd_patient.xlsx","rb") as f:
-                df = pd.read_excel(f)
+            with open("/app/loopofhenle/web_app/test_ckd_patient.csv","rb") as f:
+                df = pd.read_csv(f)
 
         if df:
             st.header("Your file:")
