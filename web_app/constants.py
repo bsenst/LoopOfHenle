@@ -1,4 +1,4 @@
-MODEL = "model_weighted.pkl"
+MODEL = "model_weighted_mean_nans.pkl"
 
 
 USED_COLUMNS = ['Patient', 'Report','EntryDate', 'NCLP',

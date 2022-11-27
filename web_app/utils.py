@@ -5,6 +5,13 @@ from constants import FEATURE_COLUMNS, USES_DIFF_FROM_LAST, USED_COLUMNS
 with open("/app/loopofhenle/web_app/analytes_nclp_mapping.pkl","rb") as f:
     analytes_nclp_mapping=pickle.load(f)
 
+
+with open("/app/loopofhenle/web_app/values_dict.pkl","rb") as f:
+    values_dict=pickle.load(f)
+
+with open("/app/loopofhenle/web_app/column_means.pkl","rb") as f:
+    column_means=pickle.load(f)
+
 def ffill_na(df):
     return df.fillna(method="ffill")
 
@@ -60,11 +67,13 @@ def preprocess_df(labs_df):
         model_data_lagged.iloc[:,2:-1] = model_data_lagged.iloc[:,2:-1].shift(1).values - model_data_lagged.iloc[:,2:-1].values
         model_data_grouped = model_data_grouped.merge(model_data_lagged.iloc[1:,:-1], on=["p_id","EntryDate"], suffixes=("","_diff_from_last"))
 
-    model_data_grouped = model_data_grouped.fillna(-999)
-
     for col in FEATURE_COLUMNS:
         if not col in model_data_grouped.columns:
-            model_data_grouped[col] = -999
+            model_data_grouped[col] = column_means[col]
+
+    model_data_grouped = model_data_grouped.fillna(column_means)
+
+    model_data_grouped = model_data_grouped.fillna(-999)
 
     # TODO: warn about missing values
 
