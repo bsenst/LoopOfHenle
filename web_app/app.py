@@ -61,10 +61,10 @@ def main():
             st.dataframe(proba)
             proba = np.mean(proba)
             if prediction > 0.5:
-                proba = np.round(proba.mean(),decimals=2)
+                proba = np.round(proba,decimals=2)
                 st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
             else:
-                proba = np.round(proba.mean(),decimals=2)
+                proba = np.round(proba,decimals=2)
                 st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
             # create shapley explanation
