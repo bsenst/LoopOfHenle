@@ -117,6 +117,12 @@ s_testosteron                  s_total_IgE_s_Total_IgE        s_total_IgE_s_Tota
 s_urea_Urea_urea_S_Urea_S-urea v_3-OH-butyrát                 x_Frakční_exkrece_vody_Fr[...]
 ```
 
+## Try the key features with the live app
+
+https://huggingface.co/spaces/bsenst/CKD-Predictor
+
+![image](https://user-images.githubusercontent.com/8211411/204114798-dfef4648-2d3a-416a-885c-d2091b800c6a.png)
+
 ## Further Resources as a result of the Friday Warm-up
 
 |URL|Description|
