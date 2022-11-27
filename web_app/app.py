@@ -33,7 +33,7 @@ def main():
 
         option = st.selectbox(
             'What is your input?',
-            ('Examplary CKD patient',"Examplary non-CKD patient"))
+            ('Examplary CKD patient',"Examplary non-CKD patient","Examplary possible-CKD patient"))
 
         # TODO: make it work with excel
         # if option =="Excel":
@@ -65,11 +65,11 @@ def main():
             if prediction > 0.5:
                 proba = np.mean(proba[:,1])
                 proba = np.round(proba,decimals=2)
-                st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
+                st.success(f"POSITIVE: Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
             else:
                 proba = np.mean(proba[:,0])
                 proba = np.round(proba,decimals=2)
-                st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
+                st.success(f"NEGATIVE: This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
             # create shapley explanation
 
