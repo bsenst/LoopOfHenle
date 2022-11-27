@@ -55,8 +55,8 @@ def main():
             st.dataframe(data)
 
         if st.button('Predict', key="tab1"):
-            prediction = model.predict(data)
-            proba = model.predict_proba(data)
+            prediction = model.predict(data[FEATURE_COLUMNS])
+            proba = model.predict_proba(data[FEATURE_COLUMNS])
             if prediction[0]:
                 proba = np.round(proba[0][1],decimals=2)
                 st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
