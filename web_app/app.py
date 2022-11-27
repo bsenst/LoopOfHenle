@@ -3,8 +3,8 @@ import pickle
 import numpy as np
 import pandas as pd
 import xgboost as xgb
-import shap
-import matplotlib.pyplot as plt
+#import shap
+#import matplotlib.pyplot as plt
 from utils import preprocess_df, analytes_nclp_mapping, values_dict, column_means
 from constants import MODEL, FEATURE_COLUMNS, USED_COLUMNS, USES_DIFF_FROM_LAST
 
@@ -77,10 +77,11 @@ def main():
 
             shap_values = explainer.shap_values(data[FEATURE_COLUMNS])
 
-            # visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
-            st.write(shap.force_plot(explainer.expected_value, shap_values[-1,:], data[FEATURE_COLUMNS].iloc[-1,:], matplotlib=True), unsafe_allow_html=True)
-            st.pyplot(bbox_inches='tight')
-            plt.clf()
+            # TODO: add shap dependency
+            # # visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
+            # st.write(shap.force_plot(explainer.expected_value, shap_values[-1,:], data[FEATURE_COLUMNS].iloc[-1,:], matplotlib=True), unsafe_allow_html=True)
+            # st.pyplot(bbox_inches='tight')
+            # plt.clf()
 
     with tab2:
         st.header("Fill in form below as input:")
