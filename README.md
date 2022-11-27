@@ -2,8 +2,6 @@
 
 Contribution to the European Health Hackathon 2022 Challenge 6 "Are you kidneying" https://hackhealth.eu/ . Collaborative work done by Roman Dusek, Francis Chemorion and Benjamin Senst.
 
-Progress & ToDo GoogleDoc https://docs.google.com/document/d/1tdbptVnlwAC6p1nt4oPbzKTXhUuPqZB65h2o9GeFpvU
-
 ## Key findings
 
 ### Providing a Model (Task #2)
