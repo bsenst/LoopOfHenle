@@ -61,7 +61,6 @@ def main():
             prediction = model.predict(data[FEATURE_COLUMNS])
             proba = model.predict_proba(data[FEATURE_COLUMNS])
             prediction = np.mean(prediction)
-            st.dataframe(proba)
             if prediction > 0.5:
                 proba = np.mean(proba[:,1])
                 proba = np.round(proba,decimals=2)
