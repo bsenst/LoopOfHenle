@@ -115,10 +115,10 @@ def main():
                 proba = model.predict_proba(data[FEATURE_COLUMNS])
                 if prediction[0]:
                     proba = np.round(proba[0][1],decimals=2)
-                    st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
+                    st.success(f"POSITIVE: Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
                 else:
                     proba = np.round(proba[0][0],decimals=2)
-                    st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
+                    st.success(f"NEGATIVE: This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
                 # create shapley explanation
 
