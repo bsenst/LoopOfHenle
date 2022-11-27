@@ -18,9 +18,8 @@ def main():
         Combining expert knowledge of doctors and improvement in machine learning we are know able to predict kidney diasease years earlier then it reaaches first stage.
         """)
 
-    tab0, tab1, tab2, tab3 = st.tabs(
-        ["Debug tab",
-        "Predict CDK for patients from excel file",
+    tab1, tab2, tab3 = st.tabs(
+        ["Predict CDK for patients from excel file",
         "Predict manually adding values",
         "Test application on exemplary patients"]
         )
@@ -126,19 +125,6 @@ def main():
                 # create shapley explanation
 
         # create shapley explanation
-        
-    with tab3:
-        st.header("Test")
-
-        # load local data
-
-
-        # display them
-
-        # preprocess input
-
-
-        # create shapley explanation
 
     
 
