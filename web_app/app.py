@@ -57,8 +57,9 @@ def main():
         if st.button('Predict', key="tab1"):
             prediction = model.predict(data[FEATURE_COLUMNS])
             proba = model.predict_proba(data[FEATURE_COLUMNS])
-            st.dataframe(prediction)
-            prediction = prediction.mean()
+            prediction = np.mean(prediction)
+            st.dataframe(proba)
+            proba = np.mean(proba)
             if prediction > 0.5:
                 proba = np.round(proba.mean(),decimals=2)
                 st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
