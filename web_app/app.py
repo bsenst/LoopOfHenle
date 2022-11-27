@@ -33,7 +33,7 @@ def main():
 
         option = st.selectbox(
             'What is your input?',
-            ('Excel', 'Examplary CKD patient',"Examplary non-CKD patient"))
+            ('Examplary CKD patient',"Examplary non-CKD patient"))
 
         # TODO: make it work with excel
         # if option =="Excel":
@@ -45,7 +45,7 @@ def main():
             with open("/app/loopofhenle/web_app/test_non_ckd_patient.csv","rb") as f:
                 df = pd.read_csv(f)
 
-        if df:
+        if len(df)>0:
             st.header("Your file:")
             st.dataframe(df)
 
