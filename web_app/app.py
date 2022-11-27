@@ -1,4 +1,3 @@
-from typing import NoneType
 import streamlit as st
 import pickle
 import numpy as np
@@ -42,7 +41,7 @@ def main():
 
 
 
-        if type(df)!=NoneType:
+        if len(df)>0:
             st.header("Your file:")
             st.dataframe(df)
 
