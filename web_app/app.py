@@ -42,7 +42,7 @@ def main():
             with open("/app/loopofhenle/web_app/test_ckd_patient.csv","rb") as f:
                 df = pd.read_csv(f)
         elif option == 'Examplary non-CKD patient':
-            with open("/app/loopofhenle/web_app/test_ckd_patient.csv","rb") as f:
+            with open("/app/loopofhenle/web_app/test_non_ckd_patient.csv","rb") as f:
                 df = pd.read_csv(f)
 
         if df:
