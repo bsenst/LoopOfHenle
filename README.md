@@ -123,10 +123,6 @@ https://bsenst-loopofhenle-web-appapp-yk9aez.streamlit.app/
 
 ![image](https://user-images.githubusercontent.com/8211411/204124133-48d2426b-3f1a-4c50-8ac6-7207b4c9f585.png)
 
-https://huggingface.co/spaces/bsenst/CKD-Predictor
-
-![image](https://user-images.githubusercontent.com/8211411/204114798-dfef4648-2d3a-416a-885c-d2091b800c6a.png)
-
 ## Further Resources as a result of the Friday Contest Warm-up
 
 |URL|Description|
