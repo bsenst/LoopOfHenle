@@ -44,6 +44,9 @@ def main():
         elif option == 'Examplary non-CKD patient':
             with open("/app/loopofhenle/web_app/test_non_ckd_patient.csv","rb") as f:
                 df = pd.read_csv(f)
+        elif option == 'Examplary possible-CKD patient':
+            with open("/app/loopofhenle/web_app/test_possible_ckd_patient.csv","rb") as f:
+                df = pd.read_csv(f)
 
         if len(df)>0:
             st.header("Your file:")
