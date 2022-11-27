@@ -13,9 +13,14 @@ def main():
     #st.markdown("<h1 style='text-align: center; color: White;background-color:#e84343'>Kidney in Check</h1>", unsafe_allow_html=True)
     st.sidebar.header("What does this app do?")
     st.sidebar.text(
-        """This app is has been create based on collaboration with doctors.
-        We have used historical diagnoses written by doctors based to improve early warning for possible kidney diasease.
-        Combining expert knowledge of doctors and improvement in machine learning we are know able to predict kidney diasease years earlier then it reaaches first stage.
+        """
+        This app is has been create based on collaboration
+        with doctors. We have used historical diagnoses
+        written by doctors based to improve early warning
+        for possible kidney diasease. Combining expert
+        knowledge of doctors and improvement in machine
+        learning we are know able to predict kidney diasease
+        years earlier then it reaaches first stage.
         """)
 
     tab1, tab2= st.tabs(
