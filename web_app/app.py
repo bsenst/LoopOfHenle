@@ -57,11 +57,12 @@ def main():
         if st.button('Predict', key="tab1"):
             prediction = model.predict(data[FEATURE_COLUMNS])
             proba = model.predict_proba(data[FEATURE_COLUMNS])
-            if prediction[0]:
-                proba = np.round(proba[0][1],decimals=2)
+            prediction = prediction.mean()
+            if prediction > 0.5:
+                proba = np.round(proba.mean(),decimals=2)
                 st.success(f"Patient is on his way to CKD (with probability {proba:.2f}), please act now.")
             else:
-                proba = np.round(proba[0][0],decimals=2)
+                proba = np.round(proba.mean(),decimals=2)
                 st.success(f"This patient doesn't seem to be on his way to CKD (with probability {proba:.2f}).")
 
             # create shapley explanation
