@@ -21,9 +21,7 @@ Blue colored data points represent a low feature value (i.e. decreased hemoglobi
 
 The diagram showing the mean SHAP values illustrate the features with the most profound impact on the model output magnitude regardless of the direction the show (i.e. speaking for CKD or for non-CKD case). The diagram suggests features such as serum kreatinin, diffeence in absolute and relative granulocyte count, difference in thrombocyte level, hemoglobine and hematocrite, lymphocytes, neutrophiles, glomerular filtration rate, urine specific weight and erythrocyte anisocytosis.
 
-The dataset reflects current clinical practice. Thus more frequent lab tests are overrepresented and might hide more rare features among other lab tests.
-
-Beside creatinine, GFR and anemia (late markers in CKD) interestingly the model also identified granulocytes, platelet and lymphocyte changes. These lab findings might play a role as early markers as is suggested in clinical research:
+The dataset reflects current clinical practice. Thus more frequent lab tests are overrepresented and might hide more rare features among other lab tests. Beside creatinine, GFR and anemia (late markers in CKD) interestingly the model also identified granulocytes, platelet and lymphocyte changes. These lab findings might play a role as early markers as is suggested in clinical research:
 
 * Agarwal R, Light RP. Patterns and prognostic value of total and differential leukocyte count in chronic kidney disease. Clin J Am Soc Nephrol. 2011 Jun;6(6):1393-9. doi: 10.2215/CJN.10521110. Epub 2011 May 5. PMID: 21551023; PMCID: PMC3109937.
 * Yu, Y., Lin, Q., Ye, D. et al. Neutrophil count as a reliable marker for diabetic kidney disease in autoimmune diabetes. BMC Endocr Disord 20, 158 (2020). https://doi.org/10.1186/s12902-020-00597-2
