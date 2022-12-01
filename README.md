@@ -1,6 +1,6 @@
 # LoopOfHenle
 
-Contribution to the European Health Hackathon 2022 Challenge 6 "Are you kidneying" https://hackhealth.eu/ . Collaborative work done by [Roman Dusek](roman-dusek
+Contribution to the European Healthcare Hackathon 2022 Challenge #6 "Are you kidneying" https://hackhealth.eu/ . Collaborative work done by [Roman Dusek](roman-dusek
 ), [Francis Chemorion](https://github.com/kchemorion) and Benjamin Senst.
 
 ***Disclaimer: The findings of this project have not been validated. Thus no medical advice can be concluded from the provided model and its deployed application.***
