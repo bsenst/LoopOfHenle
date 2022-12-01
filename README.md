@@ -29,6 +29,9 @@ Beside creatinine, GFR and anemia (late markers in CKD) interestingly the model 
 * Yu, Y., Lin, Q., Ye, D. et al. Neutrophil count as a reliable marker for diabetic kidney disease in autoimmune diabetes. BMC Endocr Disord 20, 158 (2020). https://doi.org/10.1186/s12902-020-00597-2
 * Umeres-Francia, G.E., Rojas-Fernández, M.V., Herrera-Añazco, P. et al. Neutrophil-to-lymphocyte ratio and platelet-to-lymphocyte ratio as risk factors for mortality in Peruvian adults with chronic kidney disease. Ren Replace Ther 8, 30 (2022). https://doi.org/10.1186/s41100-022-00420-9
 * Mizdrak M, Kumrić M, Kurir TT, Božić J. Emerging Biomarkers for Early Detection of Chronic Kidney Disease. J Pers Med. 2022 Mar 31;12(4):548. doi: 10.3390/jpm12040548. PMID: 35455664; PMCID: PMC9025702.
+* Kovesdy CP, Ureche V, Lu JL, Kalantar-Zadeh K. Outcome predictability of serum alkaline phosphatase in men with pre-dialysis CKD. Nephrol Dial Transplant. 2010 Sep;25(9):3003-11. doi: 10.1093/ndt/gfq144. Epub 2010 Mar 17. PMID: 20299338; PMCID: PMC2948834.
+* Taliercio JJ, Schold JD, Simon JF, Arrigain S, Tang A, Saab G, Nally JV Jr, Navaneethan SD. Prognostic importance of serum alkaline phosphatase in CKD stages 3-4 in a clinical population. Am J Kidney Dis. 2013 Oct;62(4):703-10. doi: 10.1053/j.ajkd.2013.04.012. Epub 2013 Jun 12. PMID: 23769134; PMCID: PMC3783514.
+* Gauckler P, Shin JI, Mayer G, Kronbichler A. Eosinophilia and Kidney Disease: More than Just an Incidental Finding? J Clin Med. 2018 Dec 8;7(12):529. doi: 10.3390/jcm7120529. PMID: 30544782; PMCID: PMC6306805.
 
 ## Try the key features with one of the live apps
 
