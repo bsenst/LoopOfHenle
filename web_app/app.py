@@ -21,8 +21,11 @@ def main():
         written by doctors to create early warning
         for possible kidney diasease. Combining expert
         knowledge of doctors and improvement in machine
-        learning we are know able to predict kidney diasease
-        years earlier then it reaaches first stage.
+        learning we are now able to predict kidney diasease
+        years earlier then it reaches first stage.
+        
+        Disclaimer: No medical adivce.
+        Not validated for clinical practice.
         """)
 
     tab1, tab2= st.tabs(
