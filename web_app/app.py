@@ -23,8 +23,11 @@ def main():
         knowledge of doctors and improvement in machine
         learning we are now able to predict kidney diasease
         years earlier then it reaches first stage.
-        
-        Disclaimer: No medical adivce.
+        """)
+    st.sidebar.header("Disclaimer")
+    st.sidebar.text(
+        """
+        No medical adivce.
         Not validated for clinical practice.
         """)
 
