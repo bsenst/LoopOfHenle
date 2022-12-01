@@ -19,7 +19,14 @@ Blue colored data points represent a low feature value (i.e. decreased hemoglobi
 
 The diagram showing the mean SHAP values illustrate the features with the most profound impact on the model output magnitude regardless of the direction the show (i.e. speaking for CKD or for non-CKD case). The diagram suggests features such as serum kreatinin, diffeence in absolute and relative granulocyte count, difference in thrombocyte level, hemoglobine and hematocrite, lymphocytes, neutrophiles, glomerular filtration rate, urine specific weight and erythrocyte anisocytosis.
 
-The dataset reflects current clinical practice. Thus more frequent lab tests are overrepresented and might hide more rare features among other lab tests. From descriptive data analysis we propose the following features as candidates for further investigation which are not clinical routine for detecting kidney tissue damage:
+The dataset reflects current clinical practice. Thus more frequent lab tests are overrepresented and might hide more rare features among other lab tests.
+
+Interestingly the model identified beside creatinine, GFR and anemia (late markers in CKD) also granulocytes, platelet and lymphocyte changes might play a role as early markers as is suggested in clinical research:
+
+* Agarwal R, Light RP. Patterns and prognostic value of total and differential leukocyte count in chronic kidney disease. Clin J Am Soc Nephrol. 2011 Jun;6(6):1393-9. doi: 10.2215/CJN.10521110. Epub 2011 May 5. PMID: 21551023; PMCID: PMC3109937.
+* Yu, Y., Lin, Q., Ye, D. et al. Neutrophil count as a reliable marker for diabetic kidney disease in autoimmune diabetes. BMC Endocr Disord 20, 158 (2020). https://doi.org/10.1186/s12902-020-00597-2
+* Umeres-Francia, G.E., Rojas-Fernández, M.V., Herrera-Añazco, P. et al. Neutrophil-to-lymphocyte ratio and platelet-to-lymphocyte ratio as risk factors for mortality in Peruvian adults with chronic kidney disease. Ren Replace Ther 8, 30 (2022). https://doi.org/10.1186/s41100-022-00420-9
+* Mizdrak M, Kumrić M, Kurir TT, Božić J. Emerging Biomarkers for Early Detection of Chronic Kidney Disease. J Pers Med. 2022 Mar 31;12(4):548. doi: 10.3390/jpm12040548. PMID: 35455664; PMCID: PMC9025702.
 
 ## Try the key features with one of the live apps
 
